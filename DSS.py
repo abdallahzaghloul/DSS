@@ -31,7 +31,7 @@ df['DATE']=df1['DATE'].astype(str)
 df['DATE']=df1['DATE'].str.split(' ').str[0]
 df["DATE"]= pd.to_datetime(df1["DATE"])
 #df.dropna(axis=0, inplace=True)
-
+df.filna(0)
 if st.button("Done"):           
  st.dataframe(df['CERIFICATE_NO']==SN)
 
