@@ -32,7 +32,7 @@ df.columns  = [i.upper() for i in df.columns]
 #df.dropna(axis=0, inplace=True)
 df['CERTIFICATE_NO']=df['CERTIFICATE_NO'].astype('str')
 
-df.filna(0)
+df.fillna(0)
 if st.button("Done"):           
  st.dataframe(df[df['CERTIFICATE_NO']==SN])
 
