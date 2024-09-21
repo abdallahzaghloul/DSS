@@ -24,27 +24,22 @@ SN = st.text_input("Please Enter Serial Number                                  
 if st.button("Done"):            
  st.write("OK")
 
-#Data = {'Reading_No': Reading_No,'Well_Name': Well_Name,'Well_ID':Well_ID,'Registeration_Time':Registeration_Time,'Date':Date,'C.K%': CK,'WHP': WHP,'SEP_Pressure': SEP_Pressure,'SEP_Temperature': SEP_Temperature,'FLP': FLP,'FLT': FLT,'Gas_Rate': Gas_Rate,'Condensate': Condensate,'Water': Water,'GOR': GOR,'API': API,'BS&W': BSW,'CO2 %':CO2,'H2S':H2S,'SAL':Sal,'Remarks':Remarks}
-#df0=pd.DataFrame([Data])
-#df1=pd.DataFrame([Data])
-#df1["Date"]=pd.to_datetime(df1["Date"])
-#df1["Date"]=df1.Date.dt.strftime('%d-%m-%Y')
-#df1["C.K%"]=df1["C.K%"].astype("str")+ "%"
-#df1["BS&W"]=df1["BS&W"].astype("str")+ "%"
-#df1["Gas_Rate"]=df1["Gas_Rate"].astype("str")+ " MMSCF/D"
-#df1["Water"]=df1["Water"].astype("str")+ " BBL/D"
-#df1["Condensate"]=df1["Condensate"].astype("str")+ " BBL/D"
-#df1["WHP"]=df1["WHP"].astype("str")+ " Psi"
-#df1["SEP_Pressure"]=df1["SEP_Pressure"].astype("str")+ " Psi"
-#df1["FLP"]=df1["FLP"].astype("str")+ " Psi"
-#df1["SEP_Temperature"]=df1["SEP_Temperature"].astype("str")+ " F"
-#df1["FLT"]=df1["FLT"].astype("str")+ " F" 
-#df1["API"]=df1["API"].astype("str")+ " Deg"
 
-#df1["CO2 %"]=df1["CO2 %"].astype("str")+ "%"
-#df1["H2S"]=df1["H2S"].astype("str")+ " PPM"
-#df1["SAL"]=df1["SAL"].astype("str")+ " KPPM"
-   
+
+df = pd.read_excel(File,'DSS')
+df.columns  = [i.replace(' ','_') for i in df1.columns]
+df.columns  = [i.upper() for i in df1.columns]
+df.dropna(axis=0, inplace=True)
+
+#df['RIG_NO.']  = [i.replace(' ','') for i in df1['RIG_NO.']]
+#df['RIG_NO.']  = [i.upper() for i in df1['RIG_NO.']]
+#df['JOB_TYPE']  = [i.replace(' ','') for i in df1['JOB_TYPE']]
+#df['JOB_TYPE']  = [i.upper() for i in df1['JOB_TYPE']]
+
+
+
+
+
 #st.dataframe(df1,width=1200)
 col1, col2, col3 = st.columns(3)
 
