@@ -20,7 +20,6 @@ st.markdown(" <right>  <h1>                                     الرجاء إ�
             unsafe_allow_html=True)
 
 SN = st.text_input("",value="",key="SN")
-SN=float(SN)
 
 
 df = pd.read_excel(File,'Sheet1')
@@ -31,9 +30,11 @@ df['DATE']=df['DATE'].astype(str)
 df['DATE']=df['DATE'].str.split(' ').str[0]
 df["DATE"]= pd.to_datetime(df1["DATE"])
 #df.dropna(axis=0, inplace=True)
+df["CERIFICATE_NO"]=df["CERIFICATE_NO"].astype("str")
+
 df.filna(0)
 if st.button("Done"):           
- st.dataframe(df['CERIFICATE_NO']==SN)
+ st.dataframe(df[df['CERIFICATE_NO']==SN])
 
 
 
