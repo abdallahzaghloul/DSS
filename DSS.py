@@ -20,15 +20,15 @@ st.markdown(" <right>  <h1>                                     الرجاء إ�
             unsafe_allow_html=True)
 
 SN = st.text_input("",value="",key="SN")
-
+SN=float(SN)
 
 
 df = pd.read_excel(File,'Sheet1')
 df.columns  = [i.replace(' ','_') for i in df.columns]
 df.columns  = [i.upper() for i in df.columns]
 
-df['DATE']=df1['DATE'].astype(str)
-df['DATE']=df1['DATE'].str.split(' ').str[0]
+df['DATE']=df['DATE'].astype(str)
+df['DATE']=df['DATE'].str.split(' ').str[0]
 df["DATE"]= pd.to_datetime(df1["DATE"])
 #df.dropna(axis=0, inplace=True)
 df.filna(0)
