@@ -26,10 +26,14 @@ SN = st.text_input("",value="",key="SN")
 df = pd.read_excel(File,'Sheet1')
 df.columns  = [i.replace(' ','_') for i in df.columns]
 df.columns  = [i.upper() for i in df.columns]
-df.dropna(axis=0, inplace=True)
+
+df['DATE']=df1['DATE'].astype(str)
+df['DATE']=df1['DATE'].str.split(' ').str[0]
+df["DATE"]= pd.to_datetime(df1["DATE"])
+#df.dropna(axis=0, inplace=True)
 
 if st.button("Done"):           
- st.dataframe(df)
+ st.dataframe(df['CERIFICATE_NO']==SN)
 
 
 
