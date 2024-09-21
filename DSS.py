@@ -26,7 +26,7 @@ if st.button("Done"):
 
 
 
-df = pd.read_excel(File,'Sheet1.xlsx')
+df = pd.read_excel(File,'Sheet1')
 df.columns  = [i.replace(' ','_') for i in df1.columns]
 df.columns  = [i.upper() for i in df1.columns]
 df.dropna(axis=0, inplace=True)
