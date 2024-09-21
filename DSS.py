@@ -10,7 +10,7 @@ st.image(image)
 st.markdown(" <center>  <h1> Training Certificates Verification </h1> </font> </center> </h1> ",
             unsafe_allow_html=True)
 from datetime import time
-
+File="DSS.xlsx"
 Date=datetime.date.today()
 Date=Date.strftime('%d-%m-%Y')
 #st.write(Date)
@@ -26,7 +26,7 @@ if st.button("Done"):
 
 
 
-df = pd.read_excel(File,'DSS.xlsx')
+df = pd.read_excel(File,'Sheet1.xlsx')
 df.columns  = [i.replace(' ','_') for i in df1.columns]
 df.columns  = [i.upper() for i in df1.columns]
 df.dropna(axis=0, inplace=True)
