@@ -16,6 +16,8 @@ Date=Date.strftime('%d-%m-%Y')
 #st.write(Date)
 st.markdown(" <right>  <h1>Please Enter Serial Number                                                   الرجاء إدخال كود الشهادة </h1> </font> </right> </h1> ",
             unsafe_allow_html=True)
+st.markdown(" <right>  <h1>الرجاء إدخال كود الشهادة </h1> </font> </right> </h1> ",
+            unsafe_allow_html=True)
 
 SN = st.text_input("Please Enter Serial Number                                                   الرجاء إدخال كود الشهادة ",value="",key="SN")
 
