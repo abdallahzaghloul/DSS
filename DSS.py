@@ -4,7 +4,7 @@ import pandas as pd #2
 import streamlit as st
 
 import datetime
-im = Image.open("DSS.png")
+im = Image.open("DSS_Pic.png")
 image= np.array(im)
 st.image(image)
 st.markdown(" <center>  <h1> Gas Wells Testing Follow UP </h1> </font> </center> </h1> ",
