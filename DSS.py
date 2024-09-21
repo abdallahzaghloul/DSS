@@ -2,11 +2,9 @@ from PIL import Image
 import numpy as np
 import pandas as pd #2
 import streamlit as st
-from streamlit_gsheets import GSheetsConnection
-
 
 import datetime
-im = Image.open("KPC.png")
+im = Image.open("DSS.png")
 image= np.array(im)
 st.image(image)
 st.markdown(" <center>  <h1> Gas Wells Testing Follow UP </h1> </font> </center> </h1> ",
@@ -92,42 +90,3 @@ sparesheet= Well_ID+"_"+str(Registeration_Time)
 
 col1, col2, col3 = st.columns(3)
 
-with col2:
- if st.button('Update Old Reading'):
-  conn = st.experimental_connection("gsheets", type=GSheetsConnection)
-  conn.update(spreadsheet="https://docs.google.com/spreadsheets/d/1Z0clIbSazOxcYwngdQGK557s-ltIQ-Al_Ja5ypl2fgw",worksheet=worksheet,data=df1)
-
-
-with col1:
- if st.button('Save New Reading'):
- 
- 
-  conn = st.experimental_connection("gsheets", type=GSheetsConnection)
-             
-  try:           
-   conn.create(worksheet=worksheet)
-   conn.create(worksheet=sparesheet)           
-  except:
-   st.markdown(" <left>  <h1> Please, Update Reading Registeration Time OR Reading Number UP </h1> </font> </left> </h1> ",unsafe_allow_html=True)
-            
-  else:
-   st.markdown(" <right> <h1> Sucess Register </h1> </font> </right> </h1> ",unsafe_allow_html=True)           
-   conn.update(spreadsheet="https://docs.google.com/spreadsheets/d/1Z0clIbSazOxcYwngdQGK557s-ltIQ-Al_Ja5ypl2fgw",worksheet=worksheet,data=df1)
-   conn.update(spreadsheet="https://docs.google.com/spreadsheets/d/1Z0clIbSazOxcYwngdQGK557s-ltIQ-Al_Ja5ypl2fgw",worksheet=sparesheet,data=df1)
-   conn.update(spreadsheet="https://docs.google.com/spreadsheets/d/1Z0clIbSazOxcYwngdQGK557s-ltIQ-Al_Ja5ypl2fgw",worksheet="Sheet1",data=df1["Reading_No"])
-
- 
- 
-#for i in range (1,48):           
-#   try:
-#    st.write(conn.read(worksheet=Well_ID+"_"+str(i)) )            
-#   except:
-#    pass        
-  
-
-#  conn.update(spreadsheet="https://docs.google.com/spreadsheets/d/1Z0clIbSazOxcYwngdQGK557s-ltIQ-Al_Ja5ypl2fgw",worksheet=sparesheet,data=df1)
-#conn = st.experimental_connection("gsheets", type=GSheetsConnection)
-#Last_Reading = conn.read(spreadsheet="https://docs.google.com/spreadsheets/d/1Z0clIbSazOxcYwngdQGK557s-ltIQ-Al_Ja5ypl2fgw",worksheet="Sheet1")
-#n=Last_Reading['Reading_No'].loc[0]
-#st.write(n)
-#st.write(Last_Reading)
