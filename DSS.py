@@ -28,9 +28,9 @@ df.columns  = [i.upper() for i in df.columns]
 
 #df['DATE']=df['DATE'].astype(str)
 #df['DATE']=df['DATE'].str.split(' ').str[0]
-#df["DATE"]= pd.to_datetime(df["DATE"])
+#df['DATE']= pd.to_datetime(df['DATE'])
 #df.dropna(axis=0, inplace=True)
-df["CERIFICATE_NO"]=df["CERIFICATE_NO"].astype("str")
+df['CERIFICATE_NO']=df['CERIFICATE_NO'].astype("str")
 
 df.filna(0)
 if st.button("Done"):           
