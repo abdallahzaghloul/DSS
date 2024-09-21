@@ -15,7 +15,7 @@ Date=datetime.date.today()
 Date=Date.strftime('%d-%m-%Y')
 #st.write(Date)
 
-SN = st.text_input("Please Enter Serial Number",value="",key="SN")
+SN = st.text_input("Please Enter Serial Number                                                   الرجاء إدخال كود الشهادة ",value="",key="SN")
 
 if st.button("Done"):            
  st.write("OK")
