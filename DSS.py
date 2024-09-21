@@ -15,10 +15,7 @@ Date=datetime.date.today()
 Date=Date.strftime('%d-%m-%Y')
 #st.write(Date)
 
-st.markdown(" <right>  <h1> Well Production Parameters </h1> </font> </right> </h1> ",
-            unsafe_allow_html=True)
-
-Condensate = st.text_input("Condensate (BPD)",key="Condensate")
+SN = st.text_input("DSS Course Serial Number",key="Condensate")
 
 #Data = {'Reading_No': Reading_No,'Well_Name': Well_Name,'Well_ID':Well_ID,'Registeration_Time':Registeration_Time,'Date':Date,'C.K%': CK,'WHP': WHP,'SEP_Pressure': SEP_Pressure,'SEP_Temperature': SEP_Temperature,'FLP': FLP,'FLT': FLT,'Gas_Rate': Gas_Rate,'Condensate': Condensate,'Water': Water,'GOR': GOR,'API': API,'BS&W': BSW,'CO2 %':CO2,'H2S':H2S,'SAL':Sal,'Remarks':Remarks}
 #df0=pd.DataFrame([Data])
