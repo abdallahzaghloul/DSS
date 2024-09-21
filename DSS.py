@@ -26,15 +26,11 @@ if st.button("Done"):
 
 
 
-df = pd.read_excel(File,'DSS')
+df = pd.read_excel(File,'DSS.xlsx')
 df.columns  = [i.replace(' ','_') for i in df1.columns]
 df.columns  = [i.upper() for i in df1.columns]
 df.dropna(axis=0, inplace=True)
 
-#df['RIG_NO.']  = [i.replace(' ','') for i in df1['RIG_NO.']]
-#df['RIG_NO.']  = [i.upper() for i in df1['RIG_NO.']]
-#df['JOB_TYPE']  = [i.replace(' ','') for i in df1['JOB_TYPE']]
-#df['JOB_TYPE']  = [i.upper() for i in df1['JOB_TYPE']]
 
 
 
