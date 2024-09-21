@@ -21,15 +21,15 @@ st.markdown(" <right>  <h1>                                     الرجاء إ�
 
 SN = st.text_input("",value="",key="SN")
 
-if st.button("Done"):            
- st.write("OK")
-
 
 
 df = pd.read_excel(File,'Sheet1')
 df.columns  = [i.replace(' ','_') for i in df.columns]
 df.columns  = [i.upper() for i in df.columns]
 df.dropna(axis=0, inplace=True)
+
+if st.button("Done"):           
+ st.dataframe(df)
 
 
 
